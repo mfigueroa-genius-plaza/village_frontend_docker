@@ -1,0 +1,13 @@
+{
+    "family": "village-frontend-migrate",
+    "containerDefinitions": [
+        {
+            "name": "village-frontend-migrate",
+            "image": "176209361614.dkr.ecr.us-east-1.amazonaws.com/village-frontend",
+            "cpu": 128,
+            "memory": 256,
+            "command": ["pipenv", "run", "python", "manage.py", "migrate"],
+            "essential": true
+        }
+    ]
+}

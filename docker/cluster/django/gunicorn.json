@@ -1,0 +1,20 @@
+{
+    "family": "village-frontend-gunicorn",
+    "containerDefinitions": [
+        {
+            "name": "village-frontend-gunicorn",
+            "image": "176209361614.dkr.ecr.us-east-1.amazonaws.com/village-frontend",
+            "cpu": 128,
+            "memory": 256,
+            "portMappings": [
+                {
+                    "containerPort": 8000,
+                    "hostPort": 8007,
+                    "protocol": "tcp"
+                }
+            ],
+            "command": ["pipenv", "run", "gunicorn", "wsgi", "--bind", "0.0.0.0:8000"],
+            "essential": true
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+
+
+  village-frontend-local:
+    restart: always
+    build:
+      context: .
+      dockerfile: ./docker/local/django/Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - .:/code
+    ports:
+      - 8007:8000
+      - 3000:3000
+      - 5679:5678
+    entrypoint: /code/docker/local/django/start.sh
