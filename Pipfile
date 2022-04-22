@@ -8,7 +8,7 @@ ptvsd = "*"
 pydevd = "*"
 
 [packages]
-django = "==2.2"
+django = "==2.2.28"
 django-configurations = "*"
 
 [requires]
